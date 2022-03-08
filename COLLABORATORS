@@ -1,1 +1,6 @@
+Real Python | https://realpython.com/regex-python/  | Helped me in understanding regex functionality and effectively using them.
+
+sqlite | https://docs.python.org/3.8/library/sqlite3.html | Helped me for createdb() and populatedb() functions.
+
+stackoverflow | https://stackoverflow.com/questions/37353960/pytest-exits-with-no-error-but-with-collected-0-items | I got the same error once I changed file name from test1.py to test_all.py it is resolved.
 
