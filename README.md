@@ -152,17 +152,68 @@ The function populatedb(db, incidents) takes the rows created in the extractinci
 5. Status print **statusdb()**
   This function returns the query
    of the nature of incidents and the number of
-    times they have occurred from the database 'normanpd.db'.
+  times they have occurred from the database 'normanpd.db'.
   ```bash
   cur.execute('''select nature,count(nature) as cnt
    from incidents
     group by nature order by cnt DESC ''')
     for a in cur.fetchall():
         print(a[0]+' |',a[1])
+  ``` 
+  ## tests/test_all.py
+  This test_all.py contains the test cases to test each function of **project0.py.**
+   1. fetchincidents()
+  The function **test_fetchincidents()** tests the function fetchincidents() from project0.py.
+  If the type of incidet data is bytes then the test case is passed.
+  ```bash
+  def test_fetchincidents():
+    data=p.fetchincidents(url)
+    assert type(data)==bytes
   ```
-
-
-
-
-
+  2. extractincidents()
+  Two testcases- **test_extractincidents(), test_extractincidents1()** are created
+  for testing the extractincidents() function. 
+  
+  First one, test_extractincidents() tests if the data extracted in the form
+  of list and the second one, test_extractincidents1() tests if the row of the 
+  incidents contain more than 5 values as there are only 5 columns. 
+  ```bash
+  def test_extractincidents():
+    data=p.fetchincidents(url)
+    incidents=p.extractincidents(data)
+    assert type(incidents)==list
+  def test_extractincidents1():
+      data=p.fetchincidents(url)
+      incidents=p.extractincidents(data)
+      A=[]
+      for i in incidents:
+          if len(i)==5:
+              continue
+          else:
+              A=A.append(incidents[i])
+      assert len(A)==0
+  ```
+3. createdb()
+test_createdb() is created to test if the database created in createdb() 
+is normanpd.db in the project0.py.
+```bash
+assert db=='normanpd.db'
+```
+4.  populatedb()
+For this function, the test case created is to check if data 
+entered into the database 'normanpd.db'or is empty.
+```bash
+assert cur.fetchall() is not None
+```
+5. status()
+test_status() is created to test if the status() function returns value is 
+empty or not.
+```
+assert stat is not None
+```
+To test the cases run:
+```bash
+pipenv run pytest
+```
+This will fetch results from test_all.py and return if the tests passed or not.  
 
