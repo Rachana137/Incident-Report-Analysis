@@ -1,0 +1,8 @@
+pipenv install PyPDF2    
+pipenv install pytest  
+pip install urllib3
+import PyPDF2
+import urllib
+import sqlite3
+import re
+import pytest
