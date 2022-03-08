@@ -121,7 +121,16 @@ Nan value in that position.
           pagerows[f].insert(3,'Nan')
       f=f+1
 ```  
-The list of rows will be created. 
+The list of rows will be created.
+The output will be like this:
+```bash
+[['2/28/2022 0:00', '2022-00010923', '1231 W BROOKS ST', 'Loud Party', 'OK0140200']
+['2/28/2022 0:22', '2022-00002881', '1620 CARA JO DR', 'Public Assist', '14005']
+['2/28/2022 0:22', '2022-00010924', '1620 CARA JO DR', 'Check Area', 'OK0140200']
+['2/28/2022 0:28', '2022-00010925', '1701 VINE ST', 'Disturbance/Domestic', 'OK0140200']
+['2/28/2022 0:35', '2022-00010926', '300 HAL MULDROW DR', 'Suspicious', 'OK0140200']
+...]
+```
 
 3. Create Database **createdb()**
 A database named **normanpd.db** is created using the function createdb().
