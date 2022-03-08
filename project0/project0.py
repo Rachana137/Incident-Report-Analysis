@@ -123,13 +123,11 @@ def createdb():
 def populatedb(db,incidents):
     conn = sqlite3.connect(db)
     cur = conn.cursor()
-#     for i in range(0,len(incidents)):
     cur.executemany('''INSERT INTO incidents (incident_time,incident_number,incident_location,nature,incident_ori)
     VALUES (?,?,?,?,?)''',incidents)
     conn.commit()
     cur.execute('''select * from incidents''')
-    df = pd.DataFrame(cur.fetchall(), columns=['incident_time','incident_number','incident_location','nature','incident_ori'])
-
+    
 def status(db):
     conn= sqlite3.connect(db)
     cur = conn.cursor()
