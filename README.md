@@ -166,10 +166,3 @@ The function populatedb(db, incidents) takes the rows created in the extractinci
 
 
 
-
-
-
-
-
-
-
