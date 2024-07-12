@@ -1,7 +1,7 @@
 
 # Incident Report Analysis
 ### Author: RACHANA VELLAMPALLI
-### EMAIL: rachana@ou.edu
+
 
 In the Project0, trying to extract information from the PDF file and insert it into a SQLITE database named 'normanpd.db'.
 The PDF file is cleaned using python and the data is formated into list of rows.
